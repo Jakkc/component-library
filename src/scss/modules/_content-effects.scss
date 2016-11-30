@@ -1,0 +1,152 @@
+$module: 'content-underline';
+
+.#{$module} {
+	/* Scale Up */
+	&__1 {
+		@extend %content-underline;
+
+		&:before {
+			@extend %content-pseudo;
+			background-color: transparent;
+			transform: scale(0);
+			transition: transform 0.2s ease-in;
+		}
+
+		&:hover:before {
+			transform: scale(1);
+		}
+	}
+
+	/* 3D Rotate on Y Axis */
+	&__2 {
+		@extend %content-wrapper;
+
+		&-inner {
+			@extend %content-underline;
+			background-color: rgba(#222,0.4);
+			color: white;
+
+			&:before {
+				@extend %content-pseudo;
+				top: 100%;
+				height: 100%;
+				background-color: rgba(white,0.4);
+				color: #222;
+				transform-origin: 50% 0;
+				transform: rotateX(-90deg);
+				transition: background 0.2s ease-in;
+			}
+
+			.#{$module}__2:hover & {
+				transform: rotateX(90deg);
+			}
+
+			.#{$module}__2:hover &:before {
+				background-color: rgba(white,0.6);
+			}
+		}
+	}
+
+	/* Translate Y Bold */
+	&__3 {
+		@extend %content-wrapper;
+		overflow: hidden;
+
+		&-inner {
+			@extend %content-underline;
+			transition: 0.15s ease-in;
+
+			&:before {
+				@extend %content-pseudo;
+				font-weight: bold;
+				right: -2px;
+				left: -2px;
+				transform: translateY(100%);
+			}
+
+			.#{$module}__3:hover & {
+				transform: translateY(-100%);
+			}
+		}
+	}
+
+	/* Translate X Bold */
+	&__4 {
+		@extend %content-wrapper;
+		overflow: hidden;
+
+		&-inner {
+			@extend %content-underline;
+			background-color: rgba(#222,0.4);
+			color: white;
+
+			&:before {
+				@extend %content-pseudo;
+				background-color: rgba(white,0.4);
+				color: #222;
+				transform: translateX(-100%);
+			}
+
+			.#{$module}__4:hover & {
+				transform: translateX(100%);
+			}
+		}
+	}
+	
+	/* Fly In */
+	&__5 {
+		@extend %content-wrapper;
+
+		&-inner {
+			@extend %content-underline;
+			background-color: rgba(#222,0.4);
+			color: white;
+			transition: transform 0.2s ease-in, background-color 0.2s ease-in, opacity 0.2s ease-in;
+
+			&:before {
+				@extend %content-pseudo;
+				opacity: 0;
+				background-color: transparent;
+				color: #222;
+				transform-origin: 50% 0;
+				transform: rotate(4deg)scale(1.1)translateY(-35%)translateX(10px);
+				transition: transform 0.2s ease-in;
+			}
+
+			.#{$module}__5:hover & {
+				background-color: rgba(white,0.4);
+			}
+
+			.#{$module}__5:hover &:before {
+				opacity: 1;
+				transform: rotate(0deg)scale(1)translateY(0)translateX(0);
+			}
+		}
+	}
+
+	/* Highlight */
+	&__6 {
+		@extend %content-underline;
+		color: white;
+		margin: -5px 0 0;
+		padding: 5px 0;
+		overflow: hidden;
+		border-top: 1px solid rgba(#222,0.25);
+
+		&:before {
+			@extend %content-pseudo;
+			background-color: transparent;
+			overflow: hidden;
+			padding: 5px 0;
+			color: #222;
+			max-width: 0;
+			border-bottom: 2px solid rgba(#222,0.5);
+			transition: max-width 0.2s ease-in;
+		}
+
+		&:hover:before {
+			max-width: 100%;
+		}
+	}	
+}
+

@@ -1,0 +1,15 @@
+$module: 'mo';
+
+.#{$module} {
+	padding: 20px 0;
+	margin: 0 auto;
+	text-align: center;
+	perspective: 400px;
+	animation: perspective 2s infinite ease-in-out alternate;
+
+	&__title {
+		$fontSize: 40;
+		font-size: $fontSize+px;
+		margin: 0;
+	}
+}

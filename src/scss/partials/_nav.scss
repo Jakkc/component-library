@@ -1,0 +1,28 @@
+$module: 'topNav';
+
+.#{$module} {
+	padding: 0 20px;
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+
+	&__item {
+		background-color: rgba(#222,0.4);
+		padding: 5px 20px;
+		
+		> a {
+			color: white;
+			text-shadow: 2px 2px 2px $color-1;
+		}
+
+		&.active {
+			background-color: rgba($color-2,0.4);
+			border: 2px dashed white;
+			color: $color-2;
+
+			> a {
+				text-shadow: 1px 1px 3px black;
+			}
+		}
+	}
+}

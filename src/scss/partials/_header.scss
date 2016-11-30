@@ -1,0 +1,43 @@
+$module: 'header';
+
+.#{$module} {
+	position: relative;
+	&__banner {
+		background-image: url('/assets/img/mainframe.jpg');
+		background-size: cover;
+		background-position: bottom center;
+		height: 200px;
+		animation: hueShift 5s infinite ease-in; 
+	}
+
+	&__title {		
+		$fontSize: 72;
+		font-size: $fontSize+px;
+		color: white;
+		display: inline-block;
+		z-index: 2;
+		//text-shadow: 5px 5px 2px $color-3;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-100%);
+		left: 0;
+		right: 0;
+		text-align: center;
+
+		&:before, &:after {
+			content: attr(data-content);
+			position: absolute;
+			z-index: -1;
+		}
+
+		&:before {
+			animation: glitch 2s infinite ease-in;
+			color: $color-1;
+		}
+
+		&:after {
+			animation: glitch 1s infinite reverse ease-in;
+		 	color: $color-2;
+		}
+	}
+}

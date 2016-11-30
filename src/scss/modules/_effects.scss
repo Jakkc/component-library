@@ -1,0 +1,309 @@
+$module: 'underline';
+
+.#{$module} {
+	
+	/* In to Out */
+	&__1 {
+		position: relative;
+
+		&:before {
+			@extend %underline-pseudo;
+			width: 0;
+			left: 50%;
+		}
+
+		&:after {
+			@extend %underline-pseudo;
+			width: 0;
+			right: 50%;
+		}
+
+		&:hover:before,
+		&:hover:after {
+			width: 50%;
+		}
+	}
+
+	/* Left to Right */
+	&__2 {
+		position: relative;
+
+		&:before {
+			@extend %underline-pseudo;
+			left: 0;
+			right: 0;
+			width: 0;
+		}
+
+		&:hover:before {
+			width: 100%;
+		}
+	}
+
+	/* Out to In */
+	&__3 {
+		position: relative;
+
+		&:before, &:after {
+			@extend %underline-pseudo;
+			width: 0;
+		}
+
+		&:before {
+			right: 0;
+		}
+
+		&:after {
+			left: 0;
+		}
+
+		&:hover:before,
+		&:hover:after {
+			width: 50%;
+		}
+	}
+
+	/* Lefto to Right, exit Right */
+	&__4 {
+		position: relative;
+
+		&:before {
+			@extend %underline-pseudo;
+			width: 0;
+			right: 0;
+		}
+
+		&:hover:before {
+			width: 100%;
+			left: 0;
+		}
+	}
+
+	/* Right to Left */
+	&__5 {
+		position: relative;
+
+		&:before {
+			@extend %underline-pseudo;
+			width: 0;
+			right: 0;
+		}
+
+		&:hover:before {
+			width: 100%;
+			right: 0;
+		}
+	}
+
+	/* Middle to Bottom */
+	&__6 {
+		position: relative;
+
+		&:before {
+			@extend %underline-pseudo;
+			width: 100%;
+			right: 0;
+			left: 0;
+			bottom: 35%;
+			opacity: 0;
+		}
+
+		&:hover:before {
+			opacity: 1;
+			bottom: -4px;
+		}
+	}
+
+	/* Up from Bottom */
+	&__7 {
+		position: relative;
+
+		&:before {
+			@extend %underline-pseudo;
+			width: 100%;
+			right: 0;
+			left: 0;
+			bottom: -35%;
+			opacity: 0;
+		}
+
+		&:hover:before {
+			opacity: 1;
+			bottom: -4px;
+		}
+	}
+
+	/* Horizontal Block */
+	&__8 {
+		position: relative;
+		z-index: 2;
+		transition: color 0.1s ease-in;
+		
+		&:before, &:after {
+			@extend %underline-pseudo;
+			top: 0;
+			bottom: 0;
+			opacity: 0;
+			width: 3px;
+			height: 100%;
+		}
+
+		&:before {
+			right: 50%;
+		}
+
+		&:after {
+			left: 50%;
+		}
+
+		&:hover {
+			color: white;
+		}
+
+		&:hover:before {
+			right: -5px;
+		}
+
+		&:hover:after {
+			left: -5px;
+		}
+
+		&:hover:before, &:hover:after {
+			width: 54%;
+			opacity: 1;
+			z-index: -1;
+		}
+	}
+
+	/* Horizontal Block */
+	&__9 {
+		position: relative;
+		z-index: 2;
+		transition: color 0.1s ease-in;
+		
+		&:before {
+			@extend %underline-pseudo;
+			opacity: 0;
+			width: 100%;
+			right: 0;
+			left: 0;
+			bottom: -20px;
+		}
+
+		&:hover {
+			color: white;
+		}
+
+		&:hover:before {
+			bottom: 0;
+			height: 100%;
+			opacity: 1;
+			z-index: -1;
+		}
+	}
+
+	/* Bookended Y-Axis */
+	&__10 {
+		position: relative;
+		padding: 5px 0;
+		
+		&:before, &:after {
+			@extend %underline-pseudo;
+			width: 100%;
+			height: 2px;
+			transform: scale(0.85);
+		}
+
+		&:before {	
+			bottom: 0;
+			opacity: 1;
+		}
+
+		&:after {
+			top: 50%;
+			opacity: 0;
+		}
+
+		&:hover:before {
+			transform: scale(1);
+		}
+
+		&:hover:after {
+			top: 0;
+			opacity: 1;
+		}
+	}
+
+	/* Crissy Cross */
+	&__11 {
+		position: relative;
+		padding: 5px 0;
+		
+		&:before, &:after {
+			@extend %underline-pseudo;
+			height: 2px;
+			left: 0;
+			right: 0;
+			top: 50%;
+			z-index: -1;
+			background-color: rgba(#222,0.3);
+			margin: 0 auto;
+			transform-origin: center;
+		}
+
+		&:before {	
+			transform: rotate(45deg)translateY(-50%)scale(0.5);
+		}
+
+		&:after {
+			transform: rotate(-45deg)translateY(-50%)scale(0.5);
+		}
+
+		&:hover:before,
+		&:hover:after {
+			transform: rotate(0)translateY(0)scale(1);
+			background-color: rgba(#222,0.8);
+		}
+
+		&:hover:before {
+			top: 0;
+		}
+
+		&:hover:after {
+			bottom: 0;
+			top: auto;
+		}
+	}
+
+	/* Boxy Box */
+	&__12 {
+		position: relative;
+		padding: 5px;
+		display: inline-block;
+
+		&:before, &:after {
+			@extend %underline-pseudo;
+			height: auto;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: -1;
+			background-color: transparent;
+			border: 3px solid rgba(#222,0.3);
+		}
+
+		&:after {
+			opacity: 0;
+			border: 3px solid white;
+			transform: translateY(-50%)translateX(25%);
+			transform-origin: right;
+			transition: transform 0.2s ease-in, opacity 0.2s ease-in;
+		}
+
+		&:hover:after {
+			opacity: 1;
+			transform: rotate(0)translateY(0);
+		}
+	}	
+}

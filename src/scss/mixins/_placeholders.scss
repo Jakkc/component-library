@@ -1,0 +1,38 @@
+/* _effects.scss placeholders */
+
+%underline-pseudo {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: -4px;
+	height: 3px;
+	background-color: rgba(#222,0.6);
+	transition: all 0.2s ease-in;
+}
+
+/* _content-effects.scss placeholders */
+
+%content-wrapper {
+	display: inline-block;
+	cursor: pointer;
+}
+
+%content-underline {
+	display: inline-block;
+	position: relative;
+	padding: 0 5px;
+	transform-style: preserve-3d;
+	transform-origin: 50% 0;
+	transition: transform 0.2s ease-in;
+}
+
+%content-pseudo {
+	content: attr(data-hover);
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	padding: 0 5px;
+	color: white;
+}
