@@ -7,7 +7,7 @@ $module: 'header';
 		background-size: cover;
 		background-position: bottom center;
 		height: 200px;
-		animation: hueShift 5s infinite ease-in; 
+		//animation: hueShift 5s infinite ease-in; 
 	}
 
 	&__title {		
@@ -24,7 +24,7 @@ $module: 'header';
 		right: 0;
 		text-align: center;
 
-		&:before, &:after {
+		/*&:before, &:after {
 			content: attr(data-content);
 			position: absolute;
 			z-index: -1;
@@ -38,6 +38,6 @@ $module: 'header';
 		&:after {
 			animation: glitch 1s infinite reverse ease-in;
 		 	color: $color-2;
-		}
+		}*/
 	}
 }

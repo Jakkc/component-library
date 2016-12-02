@@ -10,6 +10,10 @@ $module: 'btn';
 	padding: 10px 50px;
 	cursor: pointer;
 
+	&:active {
+		top: 2px;
+	}
+
 	&--1 {
 		@extend .#{$module};
 		background-color: transparent;
@@ -120,6 +124,164 @@ $module: 'btn';
 		&:hover:before {
 			transform: scale(1.1);
 			opacity: 0;
+		}
+	}
+
+	&--6 {
+		@extend .#{$module};
+		border: none;
+		background-color: transparent;
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 75%;
+			top: 45%;
+			bottom: 45%;
+			background-color: $color-3;
+			transition: all ease-in 0.2s,transform ease-in 0.2s 0.2s;
+		}
+
+		&:hover:before {
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: transparent;
+			border: 2px solid $color-3;
+			transform: rotate(-4deg);
+		}
+	}
+
+	&--7 {
+		@extend .#{$module};
+		background-color: transparent;
+		border: none;
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: 25%;
+			right: 25%;
+			top: 95%;
+			bottom: 0;
+			background-color: $color-3;
+			transition: all ease-in 0.2s, transform ease-in 0.2s 0.2s;
+		}
+
+		&:hover:before {
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: transparent;
+			border: 2px solid $color-3;
+			transform: rotate(4deg);
+		}
+	}
+
+	&--8 {
+		@extend .#{$module};
+		background-color: $color-1;
+		color: white;
+		border-radius: 6px;
+		box-shadow: 0 6px darken($color-1,15%);
+
+		&:hover {
+			top: 2px;
+			box-shadow: 0 4px darken($color-1,15%);
+		}
+
+		&:active {
+			top: 6px;
+			box-shadow: none;
+		}
+	}
+
+	&--9 {
+		@extend .#{$module};
+		background-color: $color-1;
+		color: white;
+		border-radius: 6px;
+		box-shadow: 0 6px darken($color-1,15%);
+		overflow: hidden;
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: -20px;
+			height: 5px;
+			width: 5px;
+			background-color: white;
+			transition: left 0.2s ease-in;
+		}
+
+		&:hover:before {
+			left: 20px;
+		}
+	}
+
+	&--10 {
+		@extend .#{$module};
+		background-color: $color-1;
+		color: white;
+		border-radius: 6px;
+		box-shadow: 0 6px darken($color-1,15%);
+		overflow: hidden;
+		transition: color 0.1s ease-in;
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			transform: translateY(-700%)translateX(-50%);
+			top: 50%;
+			left: 50%;
+			height: 5px;
+			width: 5px;
+			background-color: white;
+			transition: transform 0.2s ease-in 0.15s;
+		}
+
+		&:hover {
+			color: $color-1;
+		}
+
+		&:hover:before {
+			transform: translateY(-50%)translateX(-50%);
+		}
+	}
+
+	&--11 {
+		@extend .#{$module};
+		background-color: transparent;
+		color: $color-1;
+
+		svg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		rect {
+			stroke: $color-1;
+			stroke-width: 4;
+			stroke-dasharray: 422,0;
+			transition: all 0.8s ease-in;
+		}
+
+		&:hover rect {
+			stroke-width: 6;
+			stroke-dasharray: 25,275;
+			stroke-dashoffset: 48;
 		}
 	}
 }
